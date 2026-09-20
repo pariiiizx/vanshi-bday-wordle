@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import Polaroid from './Polaroid';
 import { playQuack } from '../utils/audio';
 import './StickerPop.css';
 
@@ -68,11 +67,19 @@ export default function StickerPop({
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 220, damping: 14, delay: 0.2 }}
         >
-          <Polaroid
-            src={sticker}
-            alt="Stage sticker reward"
-            tilt={-2}
-          />
+          <motion.div
+            className="sticker-display-wrap"
+            whileHover={{ scale: 1.06, rotate: 1 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+          >
+            <img
+              src={sticker}
+              alt="Stage sticker reward"
+              className="transparent-sticker-img"
+              draggable="false"
+            />
+          </motion.div>
 
           <motion.p
             className="sticker-pop-banner"

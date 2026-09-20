@@ -2,29 +2,75 @@
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(28, 49, 68, 0.5);
-  backdrop-filter: blur(2px);
+  background-color: #F0F7FD;
+  /* Matching Pastel Baby-Blue Gingham Pattern */
+  background-image:
+    linear-gradient(rgba(182, 218, 240, 0.45) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(182, 218, 240, 0.45) 50%, transparent 50%);
+  background-size: 36px 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px 16px;
+}
+
+/* Soft paper texture on the gingham overlay */
+.sticker-pop-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.14;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
 }
 
 .sticker-pop-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
-  max-width: 360px;
+  gap: 20px;
+  max-width: 380px;
+  width: 100%;
+}
+
+.sticker-display-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.transparent-sticker-img {
+  display: block;
+  width: 100%;
+  max-width: clamp(230px, 55vw, 320px);
+  max-height: clamp(230px, 42vh, 340px);
+  object-fit: contain;
+  background: transparent;
+  /* Crisp sticker border + subtle depth shadow */
+  filter: drop-shadow(0 0 5px #FFFFFF)
+          drop-shadow(0 0 2px #FFFFFF)
+          drop-shadow(4px 8px 18px rgba(28, 49, 68, 0.2));
 }
 
 .sticker-pop-banner {
   font-family: var(--font-handwritten);
-  font-size: 20px;
-  color: #FFFDE7;
+  font-size: clamp(20px, 2.8vh, 26px);
+  font-weight: 700;
+  color: var(--navy-text);
   text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   line-height: 1.35;
+  background: var(--cream-paper, #FFFEFA);
+  border: 2px solid var(--navy-text);
+  padding: 8px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(28, 49, 68, 0.12);
+  transform: rotate(-1deg);
 }
 
 /* CUTE PILL BUTTON FOR NEXT WORD */
@@ -32,17 +78,17 @@
   position: relative;
   background: var(--butter-yellow);
   border: 2.5px solid var(--navy-text);
-  padding: 14px 40px;
+  padding: clamp(14px, 2.2vh, 18px) clamp(38px, 8vw, 50px);
   cursor: pointer;
   border-radius: 50px;
-  box-shadow: 0 5px 0 var(--navy-text), 0 8px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 0 var(--navy-text), 0 8px 18px rgba(28, 49, 68, 0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .next-pill-text {
   font-family: var(--font-game);
   font-weight: 800;
-  font-size: 17px;
+  font-size: clamp(16px, 2.2vh, 18px);
   color: var(--navy-text);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -51,7 +97,7 @@
 .sticker-pop-next-pill:hover {
   background: #FFE54F;
   transform: translateY(-2px);
-  box-shadow: 0 7px 0 var(--navy-text), 0 10px 22px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 7px 0 var(--navy-text), 0 10px 22px rgba(28, 49, 68, 0.2);
 }
 
 .sticker-pop-next-pill:active {
