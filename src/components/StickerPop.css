@@ -1,7 +1,7 @@
 .sticker-pop-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 999;
   background-color: #F0F7FD;
   /* Matching Pastel Baby-Blue Gingham Pattern */
   background-image:
@@ -11,7 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px;
+  padding: env(safe-area-inset-top, 24px) 16px env(safe-area-inset-bottom, 24px) 16px;
+  box-sizing: border-box;
 }
 
 /* Soft paper texture on the gingham overlay */
@@ -31,9 +32,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  max-width: 380px;
+  justify-content: center;
+  gap: clamp(14px, 2.5vh, 22px);
+  max-width: 360px;
   width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .sticker-display-wrap {
@@ -41,36 +45,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   cursor: pointer;
   user-select: none;
 }
 
 .transparent-sticker-img {
   display: block;
-  width: 100%;
-  max-width: clamp(230px, 55vw, 320px);
-  max-height: clamp(230px, 42vh, 340px);
+  width: auto;
+  max-width: clamp(200px, 58vw, 270px);
+  max-height: clamp(220px, 38vh, 320px);
+  margin: 0 auto;
   object-fit: contain;
   background: transparent;
   /* Crisp sticker border + subtle depth shadow */
-  filter: drop-shadow(0 0 5px #FFFFFF)
+  filter: drop-shadow(0 0 6px #FFFFFF)
           drop-shadow(0 0 2px #FFFFFF)
-          drop-shadow(4px 8px 18px rgba(28, 49, 68, 0.2));
+          drop-shadow(3px 6px 14px rgba(28, 49, 68, 0.18));
 }
 
 .sticker-pop-banner {
   font-family: var(--font-handwritten);
-  font-size: clamp(20px, 2.8vh, 26px);
+  font-size: clamp(19px, 2.6vh, 24px);
   font-weight: 700;
   color: var(--navy-text);
   text-align: center;
   line-height: 1.35;
   background: var(--cream-paper, #FFFEFA);
   border: 2px solid var(--navy-text);
-  padding: 8px 20px;
+  padding: 8px 18px;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(28, 49, 68, 0.12);
-  transform: rotate(-1deg);
+  box-shadow: 0 4px 10px rgba(28, 49, 68, 0.12);
+  max-width: 92%;
+  margin: 0 auto;
 }
 
 /* CUTE PILL BUTTON FOR NEXT WORD */
@@ -78,11 +85,12 @@
   position: relative;
   background: var(--butter-yellow);
   border: 2.5px solid var(--navy-text);
-  padding: clamp(14px, 2.2vh, 18px) clamp(38px, 8vw, 50px);
+  padding: clamp(13px, 2vh, 17px) clamp(36px, 8vw, 48px);
   cursor: pointer;
   border-radius: 50px;
   box-shadow: 0 5px 0 var(--navy-text), 0 8px 18px rgba(28, 49, 68, 0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  margin: 0 auto;
 }
 
 .next-pill-text {

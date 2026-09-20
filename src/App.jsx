@@ -68,6 +68,16 @@ export default function App() {
   // Toast state
   const [toastMsg, setToastMsg] = useState('');
 
+  // Preload sticker images so they appear instantaneously on stage win
+  useEffect(() => {
+    config.stages.forEach((s) => {
+      if (s.sticker) {
+        const img = new Image();
+        img.src = s.sticker;
+      }
+    });
+  }, []);
+
   // Restore guesses from localStorage on init
   useEffect(() => {
     if (initialized && phase === PHASES.PLAYING && currentGuesses.length > 0) {

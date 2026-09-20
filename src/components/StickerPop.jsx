@@ -63,29 +63,29 @@ export default function StickerPop({
       >
         <motion.div
           className="sticker-pop-content"
-          initial={{ scale: 0.3, opacity: 0 }}
+          initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 220, damping: 14, delay: 0.2 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 18 }}
         >
           <motion.div
             className="sticker-display-wrap"
-            whileHover={{ scale: 1.06, rotate: 1 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <img
               src={sticker}
               alt="Stage sticker reward"
               className="transparent-sticker-img"
               draggable="false"
+              loading="eager"
             />
           </motion.div>
 
           <motion.p
             className="sticker-pop-banner"
-            initial={{ y: 15, opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.12 }}
           >
             {winBanner}
           </motion.p>
@@ -96,9 +96,9 @@ export default function StickerPop({
             onClick={handleNext}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.2 }}
             type="button"
             id="next-word-button"
           >
