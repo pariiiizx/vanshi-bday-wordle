@@ -189,6 +189,7 @@ export default function App() {
         {phase === PHASES.SPLASH && (
           <motion.div
             key="splash"
+            className="splash-screen-wrap"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -212,8 +213,6 @@ export default function App() {
               currentStage={stageIndex}
               totalStages={config.stages.length}
             />
-
-            <Decor stageIndex={stageIndex} screen="playing" />
 
             <div className="game-area">
               {/* Wordle Board */}

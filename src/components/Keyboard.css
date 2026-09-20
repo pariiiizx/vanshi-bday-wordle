@@ -51,6 +51,19 @@
   letter-spacing: 0.5px;
 }
 
+.key-back {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backspace-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 /* Key evaluated states - EXACT NYT Colors with crisp WHITE letters */
 .key-correct {
   background-color: var(--tile-correct) !important; /* #6aaa64 */
@@ -83,5 +96,10 @@
 
   .key-wide {
     font-size: 10px;
+  }
+
+  .backspace-icon {
+    width: 20px;
+    height: 20px;
   }
 }
