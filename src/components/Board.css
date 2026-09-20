@@ -1,0 +1,41 @@
+.board-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.board-card {
+  background: var(--white);
+  padding: 10px;
+  box-shadow: var(--shadow-heavy);
+  transform: rotate(-0.5deg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--tile-gap);
+  position: relative;
+  z-index: 2;
+  border-radius: 4px;
+  border: 1px solid rgba(2, 48, 71, 0.08);
+}
+
+.board-row {
+  display: flex;
+  gap: var(--tile-gap);
+}
+
+/* Scrapbook tape holding the board */
+.board-tape {
+  z-index: 12;
+}
+
+.board-tape-tl {
+  top: -4px;
+  left: 4px;
+}
+
+.board-tape-br {
+  bottom: -4px;
+  right: 4px;
+}

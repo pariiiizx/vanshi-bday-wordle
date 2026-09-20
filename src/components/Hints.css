@@ -1,0 +1,140 @@
+.hint-btn-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 6px 0;
+  width: 100%;
+}
+
+/* CUTE PILL HINT BUTTON */
+.hint-btn-pill {
+  position: relative;
+  background: var(--butter-yellow);
+  border: 2px solid var(--navy-text);
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 50px; /* Pill button */
+  box-shadow: 0 4px 0 var(--navy-text), 0 6px 12px rgba(28, 49, 68, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.hint-btn-pill-active:hover {
+  background: #FFE54F;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 var(--navy-text), 0 8px 14px rgba(28, 49, 68, 0.12);
+}
+
+.hint-btn-pill-active:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--navy-text);
+}
+
+.hint-btn-pill-disabled {
+  background: #EAEAEA;
+  border-color: #A0AEC0;
+  box-shadow: 0 2px 0 #A0AEC0;
+  opacity: 0.65;
+  cursor: default;
+}
+
+.hint-pill-text {
+  font-family: var(--font-game);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--navy-text);
+  letter-spacing: 0.5px;
+}
+
+.hint-pill-counter {
+  font-family: var(--font-game);
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--navy-text);
+  background: var(--baby-blue);
+  border: 1px solid rgba(28, 49, 68, 0.2);
+  padding: 2px 8px;
+  border-radius: 50px;
+}
+
+.hint-nudge-text {
+  font-family: var(--font-handwritten);
+  font-size: 14px;
+  color: var(--duck-orange);
+  font-weight: bold;
+}
+
+/* CUTE POSTAGE STAMP / MINI POSTCARD HINT DISPLAY */
+.hint-postcard {
+  position: relative;
+  background: #FFFDEB;
+  border: 2px dashed var(--baby-blue-deep);
+  border-radius: 12px;
+  padding: 10px 18px 12px;
+  margin: 4px auto;
+  box-shadow: 0 4px 12px rgba(28, 49, 68, 0.08);
+  width: 90%;
+  max-width: 380px;
+}
+
+/* Little duck sticker on the corner of the hint */
+.hint-card-duck {
+  position: absolute;
+  top: -16px;
+  right: -10px;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(1px 2px 0px rgba(28, 49, 68, 0.15));
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hint-stamp-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 4px;
+}
+
+.hint-stamp-tag {
+  font-family: var(--font-game);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy-text);
+  background: var(--baby-blue);
+  border: 1px solid rgba(28, 49, 68, 0.15);
+  padding: 2px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.hint-postcard-text {
+  font-family: var(--font-handwritten);
+  font-size: clamp(15px, 2.3vh, 18px);
+  color: var(--navy-text);
+  line-height: 1.35;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 360px) {
+  .hint-btn-pill {
+    padding: 6px 16px;
+  }
+
+  .hint-pill-text {
+    font-size: 12px;
+  }
+
+  .hint-postcard {
+    padding: 8px 14px 10px;
+  }
+  
+  .hint-card-duck {
+    width: 36px;
+    height: 36px;
+  }
+}

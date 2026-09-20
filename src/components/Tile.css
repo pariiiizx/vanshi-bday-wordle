@@ -1,0 +1,64 @@
+.tile {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--tile-empty-border);
+  background: var(--white);
+  perspective: 500px;
+  transform-style: preserve-3d;
+  transition: background-color 0s var(--reveal-delay, 0s),
+              border-color 0s var(--reveal-delay, 0s),
+              color 0s var(--reveal-delay, 0s);
+  border-radius: 2px;
+}
+
+.tile-letter {
+  font-family: var(--font-game);
+  font-weight: 900;
+  font-size: calc(var(--tile-size) * 0.54);
+  text-transform: uppercase;
+  line-height: 1;
+  color: inherit;
+  user-select: none;
+}
+
+/* Filled with letter, awaiting Enter */
+.tile-filled {
+  border-color: var(--tile-filled-border);
+  color: #1a1a1b;
+  animation: tile-pop 0.1s ease-in-out;
+}
+
+@keyframes tile-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Evaluated states - EXACT NYT Wordle Colors with crisp WHITE letters */
+.tile-correct {
+  background-color: var(--tile-correct); /* #6aaa64 */
+  border-color: var(--tile-correct);
+  color: #FFFFFF !important;
+}
+
+.tile-present {
+  background-color: var(--tile-present); /* #c9b458 */
+  border-color: var(--tile-present);
+  color: #FFFFFF !important;
+}
+
+.tile-absent {
+  background-color: var(--tile-absent); /* #787c7e */
+  border-color: var(--tile-absent);
+  color: #FFFFFF !important;
+}
+
+.tile-correct .tile-letter,
+.tile-present .tile-letter,
+.tile-absent .tile-letter {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}

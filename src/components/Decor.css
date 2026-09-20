@@ -1,0 +1,62 @@
+.decor-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+}
+
+.interactive-decor-duck {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 12;
+  user-select: none;
+}
+
+.decor-duck-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Clean die-cut sticker look with paper shadow, NO square background */
+  filter: drop-shadow(0 0 2px #ffffff)
+          drop-shadow(0 0 2px #ffffff)
+          drop-shadow(2px 3px 0px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s ease;
+}
+
+/* Quack speech bubble when duck is clicked */
+.duck-click-bubble {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFDF4;
+  border: 1.5px solid #023047;
+  color: #023047;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-handwritten);
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 25;
+}
+
+.duck-click-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #023047 transparent transparent transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-decor-duck {
+    animation: none !important;
+  }
+}

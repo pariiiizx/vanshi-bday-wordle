@@ -1,0 +1,60 @@
+.sticker-pop-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(28, 49, 68, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sticker-pop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 360px;
+}
+
+.sticker-pop-banner {
+  font-family: var(--font-handwritten);
+  font-size: 20px;
+  color: #FFFDE7;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 1.35;
+}
+
+/* CUTE PILL BUTTON FOR NEXT WORD */
+.sticker-pop-next-pill {
+  position: relative;
+  background: var(--butter-yellow);
+  border: 2.5px solid var(--navy-text);
+  padding: 14px 40px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 5px 0 var(--navy-text), 0 8px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.next-pill-text {
+  font-family: var(--font-game);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--navy-text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sticker-pop-next-pill:hover {
+  background: #FFE54F;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 var(--navy-text), 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.sticker-pop-next-pill:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--navy-text);
+}
