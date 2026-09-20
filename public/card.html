@@ -11,8 +11,13 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 :root[data-theme="dark"]{--k1:#b59b6a;--k2:#a08557;--glow:rgba(255,255,255,.12)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 *{box-sizing:border-box}
-body{margin:0;min-height:100%;overflow-x:hidden;color:var(--ink);font-family:'Patrick Hand','Comic Sans MS','Marker Felt',cursive,sans-serif;background-color:var(--k1);
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .08 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(circle at 22% 12%,var(--glow),transparent 45%),radial-gradient(circle at 85% 90%,rgba(80,125,42,.16),transparent 40%),repeating-linear-gradient(100deg,transparent 0 46px,rgba(120,85,30,.05) 46px 48px)}
+body{margin:0;min-height:100%;overflow-x:hidden;color:var(--ink);font-family:'Patrick Hand','Comic Sans MS','Marker Felt',cursive,sans-serif;
+background-color:#EAF2E3;
+background-image:
+linear-gradient(rgba(139,186,112,0.35) 50%, transparent 50%),
+linear-gradient(90deg, rgba(139,186,112,0.35) 50%, transparent 50%);
+background-size:36px 36px;
+animation: cardFadeIn 0.8s ease-out forwards;}
 .bg{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 .st{position:absolute;color:var(--sap);opacity:.75;animation:tw 3.4s ease-in-out infinite}
 .st svg{width:100%;height:100%;fill:currentColor;display:block}
@@ -57,8 +62,12 @@ body.open .btn{display:block}
 .dl{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;font:inherit;font-size:19px;padding:.35em 1.1em;color:#fff;background:var(--sap);border:2px dashed var(--paper);border-radius:999px;cursor:pointer;white-space:nowrap;box-shadow:0 3px 8px rgba(0,0,0,.35)}
 .zoomed .dl{opacity:1;pointer-events:auto;transform:translate(-50%,0);transition-delay:.45s}
 .zoomed .hint{opacity:0}
+@keyframes cardFadeIn{from{opacity:0}to{opacity:1}}
+.card-entry-overlay{position:fixed;inset:0;z-index:9999;background:#EAF2E3;pointer-events:none;animation:overlayOut 0.9s ease-in 0.1s forwards}
+@keyframes overlayOut{from{opacity:1}to{opacity:0}}
 </style></head>
 <body>
+<div class="card-entry-overlay"></div>
 <svg width="0" height="0" style="position:absolute"><symbol id="s" viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"/></symbol></svg>
 <div class="bg" aria-hidden="true">
 <div class="st" style="left:6%;top:9%;width:34px;height:34px"><svg><use href="#s"/></svg></div>

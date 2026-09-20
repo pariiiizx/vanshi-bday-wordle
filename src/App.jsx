@@ -143,8 +143,13 @@ export default function App() {
     nextStage();
   }, [nextStage]);
 
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   const handleOpenCard = useCallback(() => {
-    window.location.href = config.cardUrl;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      window.location.href = config.cardUrl;
+    }, 800);
   }, []);
 
   const handleReplay = useCallback(() => {
@@ -312,6 +317,18 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
+
+      {/* Page transition overlay */}
+      <AnimatePresence>
+        {isTransitioning && (
+          <motion.div
+            className="page-transition-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.75, ease: 'easeInOut' }}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
