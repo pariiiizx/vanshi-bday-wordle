@@ -4,7 +4,7 @@ const config = {
   friendName: "Cindi",
   homeName: "Vanshi",
   logo: "/assets/bdaylogo.png",
-  cardUrl: "/card.html",
+  cardUrl: "./card.html",
 
   stages: [
     {
