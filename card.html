@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cindi's Birthday Card</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;800&family=Caveat+Brush&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background-color: #F0F7FD;
+      /* Pastel Baby Blue Gingham Pattern */
+      background-image:
+        linear-gradient(rgba(182, 218, 240, 0.4) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(182, 218, 240, 0.4) 50%, transparent 50%);
+      background-size: 36px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 16px;
+      font-family: 'Fredoka', sans-serif;
+      color: #1C3144;
+    }
+
+    .card-container {
+      background: #FFFDF7;
+      border: 3px solid #C5E0F0;
+      border-radius: 20px;
+      padding: 44px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 12px 36px rgba(28, 49, 68, 0.12);
+      transform: rotate(-1deg);
+      position: relative;
+    }
+
+    .duck-sticker {
+      position: absolute;
+      top: -24px;
+      right: -16px;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px #fff) drop-shadow(2px 3px 0px rgba(0,0,0,0.15));
+    }
+
+    .duck-sticker-left {
+      position: absolute;
+      bottom: -18px;
+      left: -18px;
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px #fff) drop-shadow(2px 3px 0px rgba(0,0,0,0.15));
+      transform: scaleX(-1) rotate(-8deg);
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #1C3144;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .coming-soon {
+      font-family: 'Caveat Brush', cursive;
+      font-size: 22px;
+      color: #4F6D7A;
+      margin-bottom: 24px;
+      line-height: 1.35;
+    }
+
+    .back-btn-pill {
+      display: inline-block;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: #1C3144;
+      background: #FFF176;
+      border: 2px solid #1C3144;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 0 #1C3144, 0 6px 14px rgba(28, 49, 68, 0.12);
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    .back-btn-pill:hover {
+      background: #FFE54F;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #1C3144, 0 8px 18px rgba(28, 49, 68, 0.16);
+    }
+
+    .back-btn-pill:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #1C3144;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <img src="/assets/elements/duck1.png" alt="" class="duck-sticker" />
+    <img src="/assets/elements/duck2.png" alt="" class="duck-sticker-left" />
+    <h1>Card Coming Soon</h1>
+    <p class="coming-soon">Pari's still working on it. Hold tight!</p>
+    <a href="/" class="back-btn-pill">← BACK TO WORDLE</a>
+  </div>
+</body>
+</html>
